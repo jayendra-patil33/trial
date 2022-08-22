@@ -1,5 +1,5 @@
 jobs:
- -job: 'build exe'
+ - job: 'build exe'
   pool:
    vmImage: 'windows-latest'
   strategy:
@@ -8,15 +8,15 @@ jobs:
        python.version: '3.7'
  
   steps:
-   -task: UsePythonVersion@0
+   - task: UsePythonVersion@0
      displayName: 'Use python 3.7'
      inputs:
        versionSpec: '3.7'
-   -script: pip install -r requirements.txt
-   -displayName: 'installing dependencies'
+   - script: pip install -r requirements.txt
+   - displayName: 'installing dependencies'
    
-   -script: python setup.py bdist_msi.py
-   -displayName: 'installing exe'
+   - script: python setup.py bdist_msi.py
+   - displayName: 'installing exe'
    
    
      
