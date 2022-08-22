@@ -1,13 +1,13 @@
 jobs:
  -job: 'build exe'
- pool:
+  pool:
    vmImage: 'windows-latest'
- strategy:
+  strategy:
    matrix:
      Python37:
        python.version: '3.7'
  
- steps:
+  steps:
    -task: UsePythonVersion@0
      displayName: 'Use python 3.7'
      inputs:
