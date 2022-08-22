@@ -1,0 +1,22 @@
+jobs:
+ -job: "build exe"
+ pool:
+   vmImage: "windows-latest"
+ strategy:
+   matrix:
+     Python37:
+     python.version: "3.7"
+ 
+ steps:
+   -task:UsePythonVersion@0
+     displayName: "Use python $(python.version)"
+     inputs:
+       versionSpec: "$(python.version)"
+   -script: pip install -r requirements.txt
+   -displayName: "installing dependencies"
+   
+   -script: python setup.py bdist_msi.py
+   -displayName: "installing exe"
+   
+   
+     
