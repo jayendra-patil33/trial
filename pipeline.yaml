@@ -10,7 +10,7 @@ steps:
 - task: UsePythonVersion@0
   displayName: 'Use python $(python.version)'
   inputs:
-       versionSpec: python.version
+       versionSpec: '$(python.version)'
 - script: pip install -r requirements.txt
   displayName: 'installing dependencies'
    
