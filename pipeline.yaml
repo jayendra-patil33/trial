@@ -6,9 +6,9 @@ strategy:
        python.version: '3.7'
 steps:   
 - task: UsePythonVersion@0
-     displayName: 'Use python 3.7'
-     inputs:
-       versionSpec: '$(python.version)'
+    displayName: 'Use python 3.7'
+    inputs:
+       versionSpec: '3.7'
 - script: pip install -r requirements.txt
   displayName: 'installing dependencies'
    
