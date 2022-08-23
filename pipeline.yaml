@@ -4,9 +4,11 @@ strategy:
    matrix:
      Python37:
        python.version: '3.7'
+     Python38:
+       python.version: '3.8'
 steps:   
 - task: UsePythonVersion@0
-  displayName: 'Use python 3.7'
+  displayName: 'Use python $(python.version)'
   inputs:
        versionSpec: python.version
 - script: pip install -r requirements.txt
